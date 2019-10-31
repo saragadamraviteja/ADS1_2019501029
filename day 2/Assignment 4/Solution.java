@@ -1,15 +1,33 @@
 import java.util.*;
-class Solution{
-	public static String Josephus(int a, int b){
+final class Solution {
+	/**
+	 * ..
+	 */
+	private Solution() {
+		// for check style.
+	}
+	/**
+	 * In this method we are using queue and related methods
+	 *  like add and remove.
+	 * @param a input which implies number of numbers.
+	 * @param b input which implies nth of number.
+	 * @return returns string.
+	 */
+	public static String Josephus(final int a, final int b) {
 		// fill you code Here
 		Queue<Integer> xyz = new LinkedList<>();
+		String str = "";
 		for (int i = 0; i < a; i++) {
-			xyz.add(t);
+			xyz.add(i);
 		}
-		while () {
-			
+		while (xyz.size() > 1) {
+			for (int j = 0; j < b - 1; j++) {
+				int tem = xyz.remove();
+				xyz.add(tem);
+			}
+			str = str + xyz.remove() + " ";
 		}
-		
-		return "";
-	}
+		str = str + xyz.remove();
+		return str;
+}
 }
