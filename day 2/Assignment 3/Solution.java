@@ -1,7 +1,10 @@
 import java.util.*;
-class Solution{
-	public static String isMatching(String str){
-Stack<Character> x = new Stack<Character>();
+final class Solution {
+    private Solution() {
+        // for check style
+    }
+    public static String isMatching(final String str) {
+        Stack<Character> x = new Stack<Character>();
 
     for (int i = 0; i < str.length(); i++) {
         Character ch = str.charAt(i);
@@ -9,7 +12,7 @@ Stack<Character> x = new Stack<Character>();
                 || str.charAt(i) == '(') {
             x.push(str.charAt(i));
         } else {
-            if (x.isEmpty() 
+            if (x.isEmpty()
                     || (x.peek() == '[' && ch == '[')
                     || (x.peek() == '{' && ch == '{')
                     || (x.peek() == '(' && ch == '(')) {
@@ -19,8 +22,10 @@ Stack<Character> x = new Stack<Character>();
             }
         }
     }
-    if (x.empty())
+    if (x.empty()) {
         return "YES";
+    }
     return "NO";
 }
 }
+
