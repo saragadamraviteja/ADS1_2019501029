@@ -1,9 +1,15 @@
-import java.util.*;
+import java.util.Arrays;
 /**
  * sorting of the elements in two arrays and displaying them
  * into single sorted array.
  */
-public class Sortedarray {
+public final class Sortedarray {
+    /**
+     * private constructor.
+     */
+    private Sortedarray() {
+        //check style
+    }
     /**
      * in this method we are storing the sorted elements of two arrays in
      * single array.
