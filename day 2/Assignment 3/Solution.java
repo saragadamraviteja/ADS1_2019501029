@@ -4,7 +4,8 @@ final class Solution {
         // for check style
     }
     public static String isMatching(final String str) {
-        Stack<Character> x = new Stack<Character>();
+        Stack2 x = new Stack2(str.length());
+        // Stack<Character> x = new Stack<Character>();
 
     for (int i = 0; i < str.length(); i++) {
         Character ch = str.charAt(i);
@@ -22,7 +23,7 @@ final class Solution {
             }
         }
     }
-    if (x.empty()) {
+    if (x.isEmpty()) {
         return "YES";
     }
     return "NO";
