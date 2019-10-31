@@ -3,7 +3,7 @@ import java.util.*;
  * IN this class we are performing three sum method
  * which the sum of the values is equal to zero.
  */
-public class Threesum {
+public class ThreeSum {
     /**
      * integer count stores the count value.
     */
@@ -40,7 +40,7 @@ public class Threesum {
      */
     public static void threesum(final int[] array) {
         Arrays.sort(array);
-        Threesum obj = new Threesum();
+        ThreeSum obj = new ThreeSum();
         for (int j = 0; j < array.length; j++) {
             for (int k = j + 1; k < array.length; k++) {
                 obj.yy =  -(array[j] + array[k]);
