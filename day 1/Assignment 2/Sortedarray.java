@@ -3,11 +3,11 @@ import java.util.Arrays;
  * sorting of the elements in two arrays and displaying them
  * into single sorted array.
  */
-public final class Sortedarray {
+public final class SortedArray {
     /**
      * private constructor.
      */
-    private Sortedarray() {
+    private SortedArray() {
         //check style
     }
     /**
