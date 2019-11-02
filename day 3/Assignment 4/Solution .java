@@ -1,11 +1,10 @@
 /**
- * . solution class
+ * solution class
  *
- * @author raviteja
  */
 class Solution {
 	/**
-	 * . sorts the teams
+	 * sorts the teams
 	 *
 	 * @param teams array of teams
 	 * @return array of teams sorted
@@ -59,16 +58,16 @@ class Team implements Comparable<Team> {
 	 * @param that team object
 	 * @return -1 if less than, 0 if equal, 1 if greater
 	 */
-	public int compareTo(final Team that) {
-		if (this.noOfWins - that.noOfWins < 0) {
+	public int compareTo(final Team xyz) {
+		if (this.noOfWins - xyz.noOfWins < 0) {
 			return -1;
-		} else if (this.noOfWins == that.noOfWins) {
-			if (this.noOfLosses - that.noOfLosses > 0) {
+		} else if (this.noOfWins == xyz.noOfWins) {
+			if (this.noOfLosses - xyz.noOfLosses > 0) {
 				return -1;
-			} else if (this.noOfLosses == that.noOfLosses) {
-				if (this.noOfDraws - that.noOfDraws < 0) {
+			} else if (this.noOfLosses == xyz.noOfLosses) {
+				if (this.noOfDraws - xyz.noOfDraws < 0) {
 					return -1;
-				} else if (this.noOfDraws == that.noOfDraws) {
+				} else if (this.noOfDraws == xyz.noOfDraws) {
 					return 0;
 				}
 			}
