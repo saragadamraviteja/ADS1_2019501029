@@ -2,8 +2,6 @@
 
 /**
  * . QuickSort
- *
- * @author raviteja.
  */
 public class QuickSort {
     /**

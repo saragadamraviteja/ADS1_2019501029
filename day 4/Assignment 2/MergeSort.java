@@ -2,8 +2,6 @@
 
 /**
  * . MergeSort
- *
- * @author raviteja.
  */
 public class MergeSort {
 
