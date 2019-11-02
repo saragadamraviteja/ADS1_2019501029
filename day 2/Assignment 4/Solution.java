@@ -1,7 +1,7 @@
 import java.util.*;
 final class Solution {
 	/**
-	 * ..
+	 * ...
 	 */
 	private Solution() {
 		// for check style.
