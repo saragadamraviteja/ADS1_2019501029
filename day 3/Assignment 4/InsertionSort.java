@@ -4,7 +4,7 @@
 public class InsertionSort {
 
     /**
-     * . sorts the array
+     * sorts the array
      *
      * @param arr array that has to be sorted
      */

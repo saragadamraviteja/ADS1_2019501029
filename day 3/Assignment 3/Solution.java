@@ -1,4 +1,12 @@
+/**
+ * Insertion sort.
+ */
 class Solution{
+    /**
+     * Insertion sorting.
+     * @param arr input array of elements.
+     * @return returns int array.
+     */
     public int[] sortInsertion(int[] arr){
         // fill you code Here
         for(int i =0; i < arr.length; i++) {
@@ -12,6 +20,11 @@ class Solution{
         }
         return arr;
     }
+    /**
+     *  Selection sort.
+     * @param arr input array of elements.
+     * @return returns int array.
+     */
     public int[] sortSelection(int[] arr){
         // fill you code Here
         for(int i =0; i < arr.length; i++) {
