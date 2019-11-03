@@ -21,7 +21,7 @@ public class Stack2 {
 
     public Character pop() {
         if (!isEmpty()) {
-            Character poppeditem = array[size];
+            Character poppeditem = array[size-1];
             array[--size] = null;
             return poppeditem;
         } 

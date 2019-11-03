@@ -6,22 +6,22 @@ final class Solution {
     public static String isMatching(final String str) {
         Stack2 x = new Stack2(str.length());
         // Stack<Character> x = new Stack<Character>();
-
-    for (int i = 0; i < str.length(); i++) {
+    if(str.charAt(0) == '{' || str.charAt(0) == '['
+        || str.charAt(0) == '(') {
+            x.push(str.charAt(0));
+    } else return "NO";
+    for (int i = 1; i < str.length(); i++) {
         Character ch = str.charAt(i);
         if (str.charAt(i) == '{' || str.charAt(i) == '['
                 || str.charAt(i) == '(') {
             x.push(str.charAt(i));
-        } else {
-            if (x.isEmpty()
-                    || (x.peek() == '[' && ch == '[')
-                    || (x.peek() == '{' && ch == '{')
-                    || (x.peek() == '(' && ch == '(')) {
-                return "NO";
-            } else {
-                x.pop();
-            }
-        }
+        } else if(ch == '}' && (x.pop() == '{')) {
+                continue;
+        } else if(ch == ']' && (x.pop() == '[')) {
+                continue;
+        } else if(ch == ')' && (x.pop() == '(')) {
+                continue;
+        } else return "NO";
     }
     if (x.isEmpty()) {
         return "YES";
