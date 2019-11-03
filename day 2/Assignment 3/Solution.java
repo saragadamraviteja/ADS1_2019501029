@@ -3,6 +3,12 @@ final class Solution {
     private Solution() {
         // for check style
     }
+    /**
+     * checks for input char and push into stack
+     * or pop accordingly
+     * @param str  input string 
+     * @return  balanced or not
+     */
     public static String isMatching(final String str) {
         Stack2 x = new Stack2(str.length());
         // Stack<Character> x = new Stack<Character>();
