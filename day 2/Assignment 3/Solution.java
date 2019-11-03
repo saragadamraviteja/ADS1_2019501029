@@ -3,7 +3,7 @@ final class Solution {
     private Solution() {
         // for check style
     }
-    /**
+    /**.
      * checks for input char and push into stack
      * or pop accordingly
      * @param str  input string 
