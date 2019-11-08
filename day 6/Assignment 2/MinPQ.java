@@ -5,11 +5,18 @@ public class MinPQ {
     /**
      * double datatype array which stores elements.
      */
-    public double[] pq;
+    private double[] pq;
     /**
      * integer N which stores the size the array.
      */
-    public int N;
+    private int N;
+
+    public double[] getpq() {
+        return this.pq;
+    }
+    public int getnum() {
+        return this.N;
+    }
     /**
      * declaring the size of the array.
      * @param capacity size.
@@ -37,7 +44,7 @@ public class MinPQ {
      * find the sorted oreder using swim.
      * @param k represents the element
      */
-     public void swim(final int k) {
+     public void swim(int k) {
             while (k > 1 && pq[k] < pq[k / 2]) {
             exch(k, k / 2);
             k = k / 2;
@@ -47,7 +54,7 @@ public class MinPQ {
      * representing in order using sink.
      * @param k represents the element.
      */
-     public void sink(final int k) {
+     public void sink(int k) {
         while (2 * k <= N) {
         int j = 2 * k;
         if (j < N && (pq[j] > pq[j + 1])) {

@@ -1,5 +1,6 @@
 /**
  * . dynamic median of an array of elements.
+ * @author raviteja.
  */
 class Solution {
 /**
@@ -19,17 +20,17 @@ public static double[] dynamicMedian(final double[] arr) {
 		} else {
 			max.insert(arr[i]);
 		}
-		if (min.N - max.N > 1) {
+		if (min.getnum() - max.getnum() > 1) {
 			max.insert(min.delMin());
-		} else if (max.N - min.N > 1) {
+		} else if (max.getnum() - min.getnum() > 1) {
 			min.insert(max.delMax());
 		}
-		if (min.N == max.N) {
-			medn = (min.pq[1] + max.pq[1]) / 2.0;
-		} else if (min.N - max.N == 1) {
-			medn = min.pq[1];
-		} else if (max.N - min.N == 1) {
-			medn = max.pq[1];
+		if (min.getnum() == max.getnum()) {
+			medn = (min.getpq()[1] + max.getpq()[1]) / 2.0;
+		} else if (min.getnum() - max.getnum() == 1) {
+			medn = min.getpq()[1];
+		} else if (max.getnum() - min.getnum() == 1) {
+			medn = max.getpq()[1];
 		}
 		arr1[ss++] = medn;
 		}
