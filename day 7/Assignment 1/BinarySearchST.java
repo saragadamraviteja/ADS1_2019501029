@@ -129,23 +129,5 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
             return keys[yy - 1];
         }
     }
-
-    // public String toString() {
-    //     String str = "";
-    //     for (int i = 0; i < x; i++) {
-    //         str += keys[i] + " ";
-    //     }
-    //     return str;
-    // }
-
-    // public Key min() {
-    //     if (x == 0) {
-    //         return null;
-    //     } else keys[0];
-    // }
-
-    // public Iterable<Key> keys() {
-    //     return keys(min(), max());
-    // }
 }
     
