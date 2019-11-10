@@ -1,17 +1,34 @@
+/**
+ * Linear probing implementation.
+ * @author raviteja.
+ */
 import java.util.Arrays;
 public class LinearProbing<Key, Value> {
+    /**
+     * which stores the keys in an array
+     */
     Key[] keys;
+    /**
+     * which stores an values in array.
+     */
     Value[] values;
+    /**
+     * linear probing constructor for fields.
+     */
     public LinearProbing(Key[] ks, Value[] vs) {
         keys = (Key[]) new Object[ks.length * 100];
         values = (Value[]) new Object[ks.length * 100];
         createDict(ks, vs);
     }
-
+    /**
+     * for generating hash code.
+     */
     public int hash(Key k) {
         return ((k.hashCode()& 0x7fffffff) % (keys.length));
     }
-
+    /**
+     * it inserts an key into an array.
+     */
     public void put(Key k, Value v) {
         if (k == null) {
             return;
@@ -27,7 +44,11 @@ public class LinearProbing<Key, Value> {
         keys[i] = k;
         values[i] = v;
     }
-
+    /**
+     * it searches an element in an array.
+     * @param k key
+     * @return value.
+     */
     public Value get(Key k) {
         if (k == null) {
             return null;
@@ -40,7 +61,10 @@ public class LinearProbing<Key, Value> {
         }
         return null;
     }
-
+    /**
+     * delete an key
+     * @param k key.
+     */
     public void delete(Key k) {
         if (k == null){
             return;
@@ -61,13 +85,19 @@ public class LinearProbing<Key, Value> {
             return;
         }
     }
-
+/**
+ * for rehasing and arranging elements.
+ * @param k key
+ * @param v value.
+ */
 public void createDict(Key[] k, Value[] v) {
     for (int i = 0; i < k.length; i++) {
         put(k[i], v[i]);
     }
 }
-
+/**
+ * displays an elemnets in ana array.
+ */
 public void display() {
     for (int i = 0; i < keys.length; i++) {
         if (keys[i] != null) {
@@ -76,7 +106,10 @@ public void display() {
     }
     System.out.println("============");
 }
-
+/**
+ * main method.
+ * @param args arguements.
+ */
 public static void main(String[] args) {
     String str = "I am ravi I am this I know dash";
     String[] test1_keys = str.split(" ");

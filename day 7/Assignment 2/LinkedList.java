@@ -31,7 +31,7 @@ public class LinkedList<Key extends Comparable<Key>, Value> {
         }
         Node temp = head;
         while (temp.reference != null) {
-            if ((temp.key.equals(key))) {
+            if (!(temp.key.equals(key))) {
                 temp = temp.reference;
             } else {
                 temp.value = value;
