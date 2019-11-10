@@ -7,10 +7,10 @@ public class BST<Key extends Comparable<Key>, Value> {
         private Node left, right;
         private int size;
 
-        public Node(Key key, Value val, int size) {
+        public Node(Key key, Value val, int size1) {
             this.key = key;
             this.val = val;
-            this.size = size;
+            this.size = size1;
             left = null;
             right = null;
         }
@@ -50,6 +50,14 @@ public class BST<Key extends Comparable<Key>, Value> {
         if      (cmp < 0) return get(x.left, key);
         else if (cmp > 0) return get(x.right, key);
         else              return x.val;
+    }
+
+    public boolean isEmpty() {
+        if (size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Key min() {
@@ -190,9 +198,26 @@ public class BST<Key extends Comparable<Key>, Value> {
         x.size = size(x.left) + size(x.right) + 1;
         return x;
     } 
+ 
+    public int rank(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to rank() is null");
+        return rank(key, root);
+    }
 
+    private int rank(Key key, Node x) {
+        if (x == null) return 0; 
+        int cmp = key.compareTo(x.key); 
+        if      (cmp < 0) return rank(key, x.left); 
+        else if (cmp > 0) return 1 + size(x.left) + rank(key, x.right); 
+        else              return size(x.left); 
+    }
+    public int size() {
+        return size(root);
+    }
 
-
-
+    private int size(Node x) {
+        if (x == null) return 0;
+        else return x.size;
+    }
 }
 
