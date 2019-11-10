@@ -1,7 +1,16 @@
+/**
+ * ransom using separate chaining implementation.
+ * @author raviteja.
+ */
 import java.util.Arrays;
 public class Ransom {
+    /**
+     * arr which stores elements.
+     */
     Node[] arr;
-
+    /**
+     * node class
+     */
     public class Node {
         String key;
         int value;
@@ -12,17 +21,24 @@ public class Ransom {
             next = null;
         }
     }
-
+    /**
+     * array of strings.
+     * @param s String array.
+     */
     public Ransom(String[] s) {
         arr = new Node[2 * s.length];
-        // xy = s;
         createDict(s);
     }
-
+    /**
+     * hash method for generating hash code.
+     */
     public int hash(String k) {
         return ((k.hashCode() & 0x7fffffff) % (arr.length)); 
      }
-
+     /**
+      * inserting an key.
+      * @param k key
+      */
      public void put(String k) {
          if (k == null) {
              return;
@@ -42,7 +58,11 @@ public class Ransom {
         head.next = arr[indx];
         arr[indx] = head;
      }
-
+    /**
+     * getting an key and its value.
+     * @param k key.
+     * @return value.
+     */
      public int get(String k) {
          int indx  = hash(k);
          for (Node x = arr[indx]; x != null; x = x.next) {
@@ -52,13 +72,17 @@ public class Ransom {
          }
          return 0;
      }
-
+     /**\
+      * sending an keys into an array.
+      */
      public void createDict(String[] str) {
          for(int i = 0; i < str.length; i++) {
              put(str[i]);
          }    
      }
-
+     /**
+      * checking an ransom or not.
+      */
      public boolean check(Ransom that) {
          for (int i = 0; i < this.arr.length; i++) {
             Node x = this.arr[i];
@@ -73,7 +97,9 @@ public class Ransom {
          }
          return true;
      }
-
+     /**
+      * for displaying the output.
+      */
      public void showString() {
          for (int i = 0; i < arr.length; i++) {
              Node x = arr[i];
@@ -84,7 +110,10 @@ public class Ransom {
          }
          System.out.println("==========");
      }
-
+     /**
+      * main method.
+      * @param args arguements.
+      */
      public static void main (String[] args) {
          String str = "I am ravi I am this I know dash";
          String[] xyz = str.split(" ");
