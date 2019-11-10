@@ -1,5 +1,10 @@
 import java.util.Arrays;
-
+/**
+ * BTS implementation using arrays.
+ * @author raviteja.
+ * @param <Key> .key type
+ * @param <Value>  value type.
+ */
 public class BSTArrays<Key extends Comparable<Key>,Value> {
     Key[] keys;
     Value[] values;
@@ -24,7 +29,6 @@ public class BSTArrays<Key extends Comparable<Key>,Value> {
      * This method inserts the key value pairs into the BST
      * @param k the key in key value pair.
      * @param v the value associated with the key.
-     * Complexity is of ~O(N)
      */
     public void put(Key k, Value v) {
         if (k == null) {
@@ -37,7 +41,6 @@ public class BSTArrays<Key extends Comparable<Key>,Value> {
             System.out.println("Array is full");
             return;
         }
-        // System.out.println(myKeys[index]);
         if (keys[index] == null) {
             keys[index] = key;
             values[index] = val;
@@ -59,7 +62,6 @@ public class BSTArrays<Key extends Comparable<Key>,Value> {
 
     /**
      * This method shows the BST in root, left and right format.
-     * Complexity is of ~O(N)
      */
     public void display() {
         for (int i = 0; i < keys.length; i++) {
@@ -68,7 +70,10 @@ public class BSTArrays<Key extends Comparable<Key>,Value> {
             }
         }
     }
-
+/**
+ * main method
+ * @param args arguements.
+ */
     public static void main(String[] args) {
         BSTArrays<String, Integer> bsta = new BSTArrays<String, Integer>(100);
         bsta.put("A", 1);
