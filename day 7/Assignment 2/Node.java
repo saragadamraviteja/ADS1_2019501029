@@ -24,8 +24,8 @@ public class Node<Key extends Comparable<Key>, Value> {
 	/**.
 	 * Constructs a new instance.
 	 *
-	 * @param      key    The key
-	 * @param      value  The value
+	 * @param key  key
+	 * @param  value value
 	 * 
 	 */
 	

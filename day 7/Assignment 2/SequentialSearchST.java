@@ -1,9 +1,9 @@
 import java.util.NoSuchElementException;
 /**.
  * This class describes a sequential search st.
- *
- * @param      <Key>    The key
- * @param      <Value>  The value
+ * @author raviteja.
+ * @param <Key> key
+ * @param <Value> value
  */
 class SequentialSearchST<Key extends Comparable<Key>, Value> {
     /**.
@@ -16,7 +16,6 @@ class SequentialSearchST<Key extends Comparable<Key>, Value> {
      *
      * @param      k     { key }
      * @param      v     { value }
-     * O(constant)
      */
     void put(final Key k, final Value v) {
         if (k == null) throw new IllegalArgumentException("Argument is null");
@@ -27,10 +26,9 @@ class SequentialSearchST<Key extends Comparable<Key>, Value> {
     /**.
      * Gets the specified k.
      *
-     * @param      k     { key value }
+     * @param k key value
      *
-     * @return     { value of corresponding key }
-     * O(constant)
+     * @return value of corresponding key
      */
     Value get(final Key k) {
         if (k == null) throw new IllegalArgumentException("Argument is null");
@@ -43,10 +41,9 @@ class SequentialSearchST<Key extends Comparable<Key>, Value> {
         }
     }
     /**.
-     * { inserts all keys in queue }
+     * inserts all keys in queue.
      *
-     * @return     { queue }
-     * O(n)
+     * @return   queue
      */
     Iterable<Key> keys() {
         Queue<Key> que = new Queue<Key>();

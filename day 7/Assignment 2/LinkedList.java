@@ -21,8 +21,8 @@ public class LinkedList<Key extends Comparable<Key>, Value> {
     /**.
      * { adds key and value to linked list }
      *
-     * @param      key    The key
-     * @param      value  The value
+     * @param  key  key
+     * @param  value value
      */
     public void add(final Key key, final Value value) {
         if (head == null) {
@@ -49,7 +49,6 @@ public class LinkedList<Key extends Comparable<Key>, Value> {
      * @param key  The data
      *
      * @return { description_of_the_return_value }
-     * O(n)
      */
 
     public Node contains(final Key key) {
@@ -71,7 +70,6 @@ public class LinkedList<Key extends Comparable<Key>, Value> {
      * Returns a string representation of the object.
      *
      * @return     String representation of the object.
-     * O(n)
      */
     public String toString() {
         if (head == null) {
