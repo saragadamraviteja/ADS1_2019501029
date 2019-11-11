@@ -113,9 +113,9 @@ public void display() {
 public static void main(String[] args) {
     String str = "I am ravi I am this I know dash";
     String[] test1_keys = str.split(" ");
-    System.out.println(Arrays.toString(test1_keys));
+    //System.out.println(Arrays.toString(test1_keys));
     Integer[] test1_vals = {1,2,3,4,5,6,7,8,9};
-    System.out.println(Arrays.toString(test1_vals));
+    //System.out.println(Arrays.toString(test1_vals));
     LinearProbing<String, Integer> lp1 = new LinearProbing(test1_keys, test1_vals);
     lp1.display();
 }

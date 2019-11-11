@@ -317,5 +317,22 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (x == null) return 0;
         else return x.size;
     }
+
+    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
+        if (x ==null) {
+            return;
+        }
+        int complo = lo.compareTo(x.key);
+        int comphi = hi.compareTo(x.key);
+        if (complo < 0) keys(x.left, queue, lo, hi);
+        if (complo <= 0 && comphi >= 0) queue.enqueue(x.key);
+        if (comphi > 0) keys(x.right, queue, lo ,hi); 
+    }
+
+    public Iterable<Key> keys(Key lo, Key hi) {
+        Queue<Key> queue = new Queue<Key>();
+        keys(root, queue, lo, hi);
+        return queue;
+    }
 }
 

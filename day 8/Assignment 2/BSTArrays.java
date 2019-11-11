@@ -70,6 +70,26 @@ public class BSTArrays<Key extends Comparable<Key>,Value> {
             }
         }
     }
+
+    public value get(final Value value) {
+        int index = 0;
+        int compValue = value.compareTo(data[index]);
+        while (compValue != 0) {
+            if (compValue < 0) {
+                index = (2* index) +1;
+                if (data[index] == null) {
+                    break;
+                }
+            } else {
+                index = (2 * index) + 2;
+                if (data[index] == null) {
+                    break;
+                }
+            }
+            compValue = value.compareTo(data[index]);
+        }
+        return data[index];
+    }
 /**
  * main method
  * @param args arguements.
