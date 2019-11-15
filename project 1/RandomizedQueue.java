@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import edu.princeton.cs.algs4.StdOut;
-import java.util.Random;
+import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 /**
  * RandomizedQueue
@@ -51,8 +51,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
         }
-        Random rand = new Random();
-        int r = rand.nextInt(size);
+        int r = StdRandom.uniform(size);
+        // int r = rand.nextInt(size);
         Item tempo = arr[r]; 
         arr[r] = null;
         for (int i = r; i < size;i++) {
@@ -68,9 +68,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
         }
-        Random rnd = new Random();
-        int t = rnd.nextInt(size);
-        return arr[t];
+        int tempi = StdRandom.uniform(size);
+        return arr[tempi];
     }
 
     public Iterator<Item> iterator() {
@@ -99,6 +98,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         objj.enqueue("ravi");
         objj.enqueue("teja");
         objj.enqueue("good boy");
+        objj.enqueue("also");
         objj.dequeue();
         objj.size();
         objj.isEmpty();
