@@ -38,7 +38,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         arr[size++] = item;
     }
 
-    public void resize() {
+    private void resize() {
         if (size >= 0.5 *(arr.length)) {
         arr = Arrays.copyOf(arr, 2 * arr.length);
         } else if (size <= 0.25 * (arr.length)) {
@@ -81,13 +81,13 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         public boolean hasNext() {
             return i < size;
         }
-        public Item next() {
+        private Item next() {
             if (!hasNext()) throw new NoSuchElementException();
             Item item = arr[i];
             i++;
             return item;
         }
-        public void remove() {
+        private void remove() {
             throw new UnsupportedOperationException();
         }
     }
