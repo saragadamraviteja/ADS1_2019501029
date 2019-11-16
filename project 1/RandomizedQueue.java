@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class RandomizedQueue<Item> implements Iterable<Item> {
 
-    Item[] arr;
+    private Item[] arr;
     private int size; 
 
     // construct an empty randomized queue
@@ -52,7 +52,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
             throw new java.util.NoSuchElementException();
         }
         int r = StdRandom.uniform(size);
-        // int r = rand.nextInt(size);
         Item tempo = arr[r]; 
         arr[r] = null;
         for (int i = r; i < size;i++) {
@@ -81,13 +80,13 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         public boolean hasNext() {
             return i < size;
         }
-        private Item next() {
+        public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
             Item item = arr[i];
             i++;
             return item;
         }
-        private void remove() {
+        public void remove() {
             throw new UnsupportedOperationException();
         }
     }
