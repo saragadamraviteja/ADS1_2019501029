@@ -91,10 +91,11 @@ public class MinimumPQ<Key> {
     }
 
     public static void main(String[] args) {
+        String str = "";
         Scanner sc = new Scanner(System.in);
         System.out.println("how many elements to insert");
         int yy = sc.nextInt();
-        MinimumPQ<Integer> dd = new MinimumPQ(yy);
+        MinimumPQ<Integer> dd = new MinimumPQ<Integer>(yy);
         for (int i = 0; i < yy; i++) {
             dd.insert(sc.nextInt());
        }
@@ -103,7 +104,12 @@ public class MinimumPQ<Key> {
         for (int j = 0; j < zz; j++) {
             dd.delMin();
         }
+        System.out.println(Arrays.toString(dd.arr));
+        for (int j = 1; j < yy; j++) {
+                System.out.println("hsdcvd");
+                str +=" "+dd.delMin();
+        }
+        System.out.println(str);
         sc.close();
-        System.out.println(Arrays.toString(dd.arr));   
     }
 }
