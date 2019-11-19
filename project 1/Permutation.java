@@ -1,8 +1,13 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import java.util.NoSuchElementException;
-
+/**
+ * permutation implemantation.
+ */
 public class Permutation {
+    /**
+     * main method.
+     */
     public static void main(String[] args) {
         int k = Integer.parseInt(args[0]);
         RandomizedQueue tt = new RandomizedQueue();

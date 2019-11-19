@@ -11,23 +11,34 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private Item[] arr;
     private int size; 
 
-    // construct an empty randomized queue
+    /**
+     * construct an empty randomized queue
+     */
     public RandomizedQueue() {
         arr = (Item[]) new Object[150];
         size = 0;
     }
 
-    // is the randomized queue empty?
+    /**
+     * is the randomized queue empty
+     * @return boolean true of false.
+     */
     public boolean isEmpty() {
         return size == 0;
     }
 
-    // return the number of items on the randomized queue
+    /**
+     * return the number of items on the randomized queue
+     * @return size.
+     */
     public int size() {
         return size;
     }
 
-    // add the item
+    /**
+     * add the item
+     * @param item item.
+     */
     public void enqueue(Item item) {
         if (item == null) {
             throw new NullPointerException();
@@ -37,7 +48,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         } 
         arr[size++] = item;
     }
-
+    /**
+     * resize of the array.
+     */
     private void resize() {
         if (size >= 0.5 *(arr.length)) {
         arr = Arrays.copyOf(arr, 2 * arr.length);
@@ -46,7 +59,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         }
     }
 
-    // remove and return a random item
+    /**
+     * remove and return a random item
+     * @return item.
+     */
     public Item dequeue() {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
@@ -62,7 +78,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return tempo;
     }
 
-    // return a random item (but do not remove it)
+    /**
+     * return a random item (but do not remove it).
+     * @return random item.
+     */
     public Item sample() {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
@@ -70,11 +89,15 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         int tempi = StdRandom.uniform(size);
         return arr[tempi];
     }
-
+    /**
+     * itertor method calling.
+     */
     public Iterator<Item> iterator() {
         return new ListIterator();
     }
-
+    /**
+     * ListIteratoe class.
+     */
     private class ListIterator implements Iterator<Item> {
         private int i;
         public boolean hasNext() {
@@ -91,7 +114,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         }
     }
 
-    // unit testing (required)
+    /**
+     * main method.
+     */
     public static void main(String[] args) {
         RandomizedQueue<String> objj = new RandomizedQueue();
         objj.enqueue("ravi");

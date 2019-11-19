@@ -1,32 +1,57 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import edu.princeton.cs.algs4.StdOut;
-
+/**
+ * Deque implementation.
+ * @param <Item>
+ */
 public class Deque<Item> implements Iterable<Item> {
+    /**
+     *  first Node type which refers first.
+     */
     private Node<Item> first;
+    /**
+     *  last Node type which refers last.
+     */
     private Node<Item> last;
+    /**
+     * size refers size.
+     */
     private int size;
-
+    /**
+     * Node class
+     * @param <Item> item generic.
+     */
     private class Node<Item> {
         private Item item;
         private Node<Item> next;
         private Node<Item> previous;
     }
-
+    /**
+     * Deque constructor.
+     */
     public Deque() {
         first = null;
         last = null;
         size = 0;
     }
-
+    /**
+     * size of the node.
+     * @return size.
+     */
     public int size() {
         return size;
     }
-
+    /**
+     * empty or not.
+     * @return boolean true or false.
+     */
     public boolean isEmpty() {
         return first == null;
     }
-
+    /**
+     * adding to the first.
+     */
     public void addFirst(Item item) {
         if (item == null) {
             throw new java.lang.NullPointerException();
@@ -45,7 +70,10 @@ public class Deque<Item> implements Iterable<Item> {
         size++;
         // System.out.println(first.item);
     }
-
+    /**
+     * adding to the last.
+     * @param item item.
+     */
     public void addLast(Item item) {
         if (item == null) {
             throw new java.lang.NullPointerException();
@@ -62,7 +90,9 @@ public class Deque<Item> implements Iterable<Item> {
         }
         size++;
     }
-
+    /**
+     * removing first node.
+     */
     public Item removeFirst() {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
@@ -78,7 +108,9 @@ public class Deque<Item> implements Iterable<Item> {
         size--;
         return item;
     }
-
+    /**
+     * removing last node.
+     */
     public Item removeLast() {
         if (isEmpty()) {
             throw new java.util.NoSuchElementException();
@@ -94,10 +126,15 @@ public class Deque<Item> implements Iterable<Item> {
         size--;
         return item;
     }
+    /**
+     * iterator method.
+     */
     public Iterator<Item> iterator() {
         return new ListIterator();
     }
-
+    /**
+     * Iterator class.
+     */
     private class ListIterator implements Iterator<Item> {
         Node<Item> current = first;
         public boolean hasNext() {
@@ -113,7 +150,10 @@ public class Deque<Item> implements Iterable<Item> {
             throw new UnsupportedOperationException();
         }
     }
-
+    /**
+     * main method.
+     * @param args arguement command line.
+     */
     public static void main(String[] args) {
         Deque<String> obj = new Deque();
         obj.addFirst("ravi");
