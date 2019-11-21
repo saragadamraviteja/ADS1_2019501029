@@ -2,10 +2,10 @@ import java.util.*;
 public class LinearProbing<Key, Value> {
     private static final int INIT_CAPACITY = 4;
 
-    private int n;           // number of key-value pairs in the symbol table
-    private int m;           // size of linear probing table
-    private Key[] keys;      // the keys
-    private Value[] vals;    // the values
+    private int n;
+    private int m;
+    private Key[] keys;
+    private Value[] vals;
 
     public LinearProbing() {
         this(INIT_CAPACITY);
@@ -83,7 +83,7 @@ double count;
             }
             l = l + 100;
         }
-        System.out.println(ob.count);
+        //System.out.println(ob.count);
         // double d = ;
         System.out.printf("%.2f", (ob.count/10000));
     }
