@@ -16,8 +16,8 @@ public class LinearProbing<Key, Value> {
      * linear probing constructor for fields.
      */
     public LinearProbing(Key[] ks, Value[] vs) {
-        keys = (Key[]) new Object[ks.length * 100];
-        values = (Value[]) new Object[ks.length * 100];
+        keys = (Key[]) new Object[ks.length * 500000];
+        values = (Value[]) new Object[ks.length * 500000];
         createDict(ks, vs);
     }
     /**
